@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.DashboardActivity">
+
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:id="@+id/cardView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:cardCornerRadius="5dp"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--&lt;!&ndash;            <com.denzcoskun.imageslider.ImageSlider&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:id="@+id/image_slider"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_height="210dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_margin="20dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                app:iss_auto_cycle="true"&ndash;&gt;-->
+        <!--&lt;!&ndash;                app:iss_delay="0" />&ndash;&gt;-->
+        <!--            -->
+        <!--        </androidx.cardview.widget.CardView>-->
+
+        <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+            android:id="@+id/carousel"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:padding="20dp"
+            app:carouselBackground="#00000000"
+            app:autoPlay="true"
+            app:autoPlayDelay="3000"
+            app:carouselPadding="5dp"
+            app:carouselType="SHOWCASE"
+            app:imageScaleType="fitXY"
+            app:infiniteCarousel="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showNavigationButtons="false" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvUserList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/carousel"
+            android:padding="20dp"/>
+
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="#DDE5F0"
+            android:horizontalSpacing="6dp"
+            android:numColumns="2"
+            android:padding="20dp"
+            android:verticalSpacing="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvUserList"
+            tools:listitem="@layout/gridview_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
